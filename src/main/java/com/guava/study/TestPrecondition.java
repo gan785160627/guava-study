@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 
 import java.util.List;
 
-public class PersonPrecondition {
+public class TestPrecondition {
     public void getPerson(int age, String name, List<String> children) {
         Preconditions.checkNotNull(name, "name不能为null");
         Preconditions.checkArgument(name.length()>0, "neme不能为\'\'");

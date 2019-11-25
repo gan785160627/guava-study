@@ -12,7 +12,8 @@ import java.util.Set;
 
 public class CollectionUtilTest {
     @Test
-    public void test1() {
+    public void testIterables() {
+        //test Iterables
         List<String> list = Lists.newArrayList("a", "b", "c", "a", "c", "d");
         System.out.println(Iterables.frequency(list, "a"));
         System.out.println(Iterables.getLast(list));
@@ -21,7 +22,8 @@ public class CollectionUtilTest {
     }
 
     @Test
-    public void test2() {
+    public void testSets() {
+        //test Sets
         Set<String> set1 = Sets.newHashSet("a", "b", "c", "d");
         Set<String> set2 = Sets.newHashSet("c", "d", "e", "f");
         Sets.SetView<String> intersection = Sets.intersection(set1, set2);
@@ -40,7 +42,8 @@ public class CollectionUtilTest {
 
 
     @Test
-    public void test3() {
+    public void testUniqueIndex() {
+        //test Maps.uniqueIndex
         Person person1 = new Person(1,"a","b", 1000);
         Person person2 = new Person(2,"c","d", 1000);
         Person person3 = new Person(3,"e","f", 1000);
@@ -55,7 +58,8 @@ public class CollectionUtilTest {
     }
 
     @Test
-    public void test4() {
+    public void testMapsDifference() {
+        //test Maps.difference
         Map<String, Integer> left = ImmutableMap.of("a", 1, "b", 2, "c", 3);
         Map<String, Integer> right = ImmutableMap.of( "b", 2, "c", 4, "d", 5);
         MapDifference<String, Integer> diff = Maps.difference(left, right);
@@ -67,7 +71,8 @@ public class CollectionUtilTest {
     }
 
     @Test
-    public void test5() {
+    public void testMultimapsIndex() {
+        //test Multimaps.index
         ImmutableSet digits = ImmutableSet.of("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
         Function<String, Integer> lengthFunction = new Function<String, Integer>() {
             public Integer apply(String string) {
@@ -80,13 +85,15 @@ public class CollectionUtilTest {
     }
 
     @Test
-    public void test6() {
+    public void testInvertFrom() {
+        //test Multimaps.invertFrom
         ArrayListMultimap<String, Integer> multimap = ArrayListMultimap.create();
         multimap.putAll("b", Ints.asList(2, 4, 6));
         multimap.putAll("a", Ints.asList(4, 2, 1));
         multimap.putAll("c", Ints.asList(2, 5, 3));
 
-        TreeMultimap<Integer, String> inverse = Multimaps.invertFrom(multimap, TreeMultimap.<Integer, String>create());
+        TreeMultimap<Integer, String> inverse = Multimaps.invertFrom(multimap, TreeMultimap.create());
+        System.out.println(multimap);
         System.out.println(inverse);
     }
 

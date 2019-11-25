@@ -1,10 +1,8 @@
 package com.guava.study;
 
 import com.google.common.collect.AbstractIterator;
-import com.google.common.collect.Lists;
 
 import java.util.Iterator;
-import java.util.List;
 
 public class SkipNullAbstractIterator {
     public static Iterator<String> skipNulls(final Iterator<String> in) {

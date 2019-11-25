@@ -9,7 +9,8 @@ import java.util.Map;
 
 public class BiMapTest {
     @Test
-    public void test1() {
+    public void testBiMap() {
+        //test Map and BiMap
         Map<String, Integer> nameToId = Maps.newHashMap();
         Map<Integer, String> idToName = Maps.newHashMap();
         nameToId.put("Bob", 42);
@@ -20,7 +21,8 @@ public class BiMapTest {
     }
 
     @Test
-    public void test2() {
+    public void testBiMapValue() {
+        //BiMap不仅key不相同，value也不能相同
         BiMap<String, Integer> idName = HashBiMap.create();
         idName.put("Bob", 42);
         idName.put("Bob2", 42);

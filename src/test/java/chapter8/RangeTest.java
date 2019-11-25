@@ -11,7 +11,7 @@ import static com.google.common.collect.BoundType.OPEN;
 
 public class RangeTest {
     @Test
-    public void test1() {
+    public void testRange() {
         System.out.println(Range.closed(1, 3));
         System.out.println(Range.closedOpen(1, 3));
         System.out.println(Range.lessThan(3));

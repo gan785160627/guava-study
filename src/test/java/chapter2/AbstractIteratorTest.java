@@ -10,7 +10,8 @@ import static com.guava.study.SkipNullAbstractIterator.skipNulls;
 
 public class AbstractIteratorTest {
     @Test
-    public void test1() {
+    public void testSkipNullAbstractIterator() {
+        //test SkipNullAbstractIterator skipNulls
         List<String> list = Lists.newArrayList("a","b",null,"c");
         Iterator<String> iterator = list.iterator();
         Iterator<String> newIterator = skipNulls(iterator);

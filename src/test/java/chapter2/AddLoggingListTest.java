@@ -9,7 +9,8 @@ import java.util.List;
 
 public class AddLoggingListTest {
     @Test
-    public void test1() {
+    public void testForwardingList() {
+        //test ForwardingList
         AddLoggingList<String> addLoggingList = new AddLoggingList<>(new ArrayList<>());
         List<String> list = Lists.newArrayList("d", "e", "f");
         addLoggingList.add("a");

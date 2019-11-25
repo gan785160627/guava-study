@@ -37,7 +37,8 @@ public class ListenableFutureTest {
     };
 
     @Test
-    public void test1() {
+    public void testCallback() {
+        //test addListener addCallback
         System.out.println("主线程start");
 
         Task task1 = new Task();
@@ -58,7 +59,8 @@ public class ListenableFutureTest {
     }
 
     @Test
-    public void test2() {
+    public void testTransform() {
+        //test Futures.transform
         Task task1 = new Task();
         task1.args = "task1";
         ListenableFuture<String> future = pool.submit(task1);
@@ -80,7 +82,8 @@ public class ListenableFutureTest {
     }
 
     @Test
-    public void test3() {
+    public void testAllAsList() {
+        //test Futures.allAsList
         System.out.println("主线程start");
         Task task1 = new Task();
         task1.args = "task1";
@@ -95,7 +98,8 @@ public class ListenableFutureTest {
     }
 
     @Test
-    public void test4() {
+    public void testCheckedFuture() {
+        //test CheckedFuture
         Task task3 = new Task();
         task3.args = "task3";
         ListenableFuture<String> future3 = pool.submit(task3);

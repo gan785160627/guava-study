@@ -15,7 +15,8 @@ import java.util.concurrent.TimeUnit;
 public class ServiceTest {
 
     @Test
-    public void test1() {
+    public void testAbstractIdleService() {
+        //AbstractIdleService
         DefaultService service = new DefaultService();
         try {
             service.addListener(new TestListener(), MoreExecutors.sameThreadExecutor());
@@ -29,7 +30,8 @@ public class ServiceTest {
     }
 
     @Test
-    public void test2() {
+    public void testAbstractExecutionThreadService() {
+        //AbstractExecutionThreadService
         DefaultAbstractExecutionThreadService service = new DefaultAbstractExecutionThreadService();
         try {
             service.addListener(new TestListener(), MoreExecutors.sameThreadExecutor());
@@ -42,7 +44,8 @@ public class ServiceTest {
     }
 
     @Test
-    public void test3() {
+    public void testAbstractScheduledService() {
+        //AbstractScheduledService
         DefaultAbstractScheduledService service = new DefaultAbstractScheduledService();
         try {
             service.addListener(new TestListener(), MoreExecutors.sameThreadExecutor());
@@ -56,7 +59,8 @@ public class ServiceTest {
     }
 
     @Test
-    public void test4() {
+    public void testServiceManager() {
+        //ServiceManager
         DefaultService service1 = new DefaultService();
         DefaultAbstractExecutionThreadService service2 = new DefaultAbstractExecutionThreadService();
         DefaultAbstractScheduledService service3 = new DefaultAbstractScheduledService();

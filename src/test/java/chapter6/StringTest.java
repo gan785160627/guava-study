@@ -26,16 +26,16 @@ public class StringTest {
     }
 
     @Test
-    public void testSplitter1() {
+    public void testSplitter() {
         Iterable<String> iterable = Splitter.on(',')
                 .trimResults()
                 .omitEmptyStrings()
-                .split("foo,bar,,   qux");
+                .split("   foo,bar,,   qux");
         System.out.println(iterable);
     }
 
     @Test
-    public void testSplitter2() {
+    public void testSplitterFixedLength() {
         Iterable<String> iterable = Splitter.fixedLength(3).split("abcdefghijklmn");
         System.out.println(iterable);
     }

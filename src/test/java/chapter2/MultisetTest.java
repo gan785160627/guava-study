@@ -11,8 +11,10 @@ import java.util.Map;
 
 public class MultisetTest {
     @Test
-    public void test1() {
+    public void testWordCount() {
+        //  单词计数的三种方式
         List<String> words = Lists.newArrayList("a","b","c","b","d","d");
+        //原始方式
         Map<String, Integer> counts = new HashMap<String, Integer>();
         for (String word : words) {
             Integer count = counts.get(word);
@@ -23,6 +25,7 @@ public class MultisetTest {
             }
         }
         System.out.println(counts);
+        //multiset方式
         Multiset multiset = HashMultiset.create(words);
         System.out.println(multiset);
         System.out.println(multiset.count("b"));
@@ -30,6 +33,7 @@ public class MultisetTest {
         System.out.println(multiset.entrySet());
         System.out.println(multiset.size());
         System.out.println(multiset.elementSet().size());
+        //merge方式
         Map<String, Integer> counts2 = new HashMap<String, Integer>();
         for (String word : words) {
             counts2.merge(word, 1, (prev, one) -> prev + one);

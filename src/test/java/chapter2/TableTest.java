@@ -6,7 +6,8 @@ import org.junit.Test;
 
 public class TableTest {
     @Test
-    public void test1() {
+    public void testTable() {
+        //test table
         Table<Integer, Integer, String> weightedGraph = HashBasedTable.create();
         weightedGraph.put(1, 2, "a");
         weightedGraph.put(1, 3, "b");

@@ -8,8 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 public class MultimapTest {
-    private static Map<String, List<Integer>> map = new HashMap<String, List<Integer>>();
-    private static Multimap multimap = ArrayListMultimap.create();
+    //Multimap对比基本的Map
+    private static Map<String, List<Integer>> map = new HashMap<>();
+    private static Multimap<String, Integer> multimap = ArrayListMultimap.create();
 
     static {
         //a -> 1 a -> 2 b -> 3 b -> 5 a ->4
@@ -41,19 +42,22 @@ public class MultimapTest {
         multimap.put(key, value);
     }
     @Test
-    public void test1() {
+    public void testGet() {
+        //test get and .asMap().get
         System.out.println(multimap.asMap().get("c"));
         System.out.println(multimap.get("c"));
     }
 
     @Test
-    public void test2() {
+    public void testKeys() {
+        //test keys and keySet
         System.out.println(multimap.keys());
         System.out.println(multimap.keySet());
     }
 
     @Test
-    public void test3() {
+    public void testValues() {
+        //test values and asMap().values
         System.out.println(multimap.values());
         System.out.println(multimap.asMap().values());
     }

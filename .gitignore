@@ -1,0 +1,11 @@
+target/*
+.idea
+*.iml
+*/*.iml
+*.exe
+*.jar
+*.apk
+*.ipa
+*.vscode
+*.DS_Store
+**.DS_Store

@@ -26,13 +26,14 @@ public class OrderingTest {
     }
 
     @Test
-    public void test1() {
+    public void testOrdering() {
+        //test ordering .natural() .reverse() .nullsFirst() .onResultOf .sortedCopy .greatestOf
         Foo f1 = new Foo("a", 4);
         Foo f2 = new Foo("b", 3);
         Foo f3 = new Foo(null, 2);
         Foo f4 = new Foo("c", 1);
         List<Foo> list = Lists.newArrayList(f1, f2, f3, f4);
-        Ordering<Foo> ordering = Ordering.natural().nullsFirst().onResultOf(new Function<Foo, String>() {
+        Ordering<Foo> ordering = Ordering.natural().reverse().nullsFirst().onResultOf(new Function<Foo, String>() {
             public String apply(Foo foo) {
                 return foo.sortedBy;
             }
